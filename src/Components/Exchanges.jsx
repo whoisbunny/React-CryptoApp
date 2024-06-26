@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios  from 'axios'
-import {server} from '../index'
 import { Container, HStack, Heading, Image, Text, VStack } from '@chakra-ui/react'
 import Loader from './Loader'
 import ErrorPage from './ErrorPage'
+const server = import.meta.env.VITE_SERVER;
 const Exchanges = () => {
-
   const [exchanges , setExchanges] = useState([])
   const [loading , setLoading] = useState(true)
   const [error , setError] = useState(false)
@@ -15,7 +14,7 @@ const Exchanges = () => {
     const fetchExchanges = async () =>{
       try {
         
-        const {data } = await axios.get(`${server}/exchanges` )
+        const { data } = await axios.get(`${server}/exchanges`);
         
         setExchanges(data);
         setLoading(false)

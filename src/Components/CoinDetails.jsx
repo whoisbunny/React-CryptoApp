@@ -1,19 +1,18 @@
-import { Badge, Box, Button, Container, HStack, Image, Progress, Radio, RadioGroup, Stat, StatArrow, StatHelpText, StatLabel, StatNumber, StatUpArrow, Text, VStack } from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
+import { Badge, Box, Button, Container, HStack, Image, Progress, Radio, RadioGroup, Stat, StatHelpText, StatLabel, StatNumber, StatUpArrow, Text, VStack } from '@chakra-ui/react'
+import  { useEffect, useState } from 'react'
 import Loader from './Loader'
 import axios  from 'axios'
-import {server} from '../index'
 import { useParams } from 'react-router-dom'
 import ErrorPage from './ErrorPage'
-import Chart from './Chart'
-import { wrap } from 'framer-motion'
+import Chart from './Chart.jsx'
+const server = import.meta.env.VITE_SERVER;
 
 const CoinDetails = () => {
   
   const [coin , setCoin] = useState([])
   const [loading , setLoading] = useState(true)
   const [error , setError] = useState(false)
-  const [page , setPage] = useState(1)
+  // const [page , setPage] = useState(1)
   const [currency , setCurrency] = useState("inr")
   const [days , setDays] = useState('24h')
   const [chartArray , setChartArray] = useState([])

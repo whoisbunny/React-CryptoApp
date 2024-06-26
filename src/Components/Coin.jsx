@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import axios  from 'axios'
-import {server} from '../index'
-import { Button, Container, HStack, Radio, RadioGroup, Stack, VStack, } from '@chakra-ui/react'
+import { Button, Container, HStack, Radio, RadioGroup, VStack, } from '@chakra-ui/react'
 import Loader from './Loader'
 import ErrorPage from './ErrorPage'
 import CoinCard from './CoinCard'
+const server = import.meta.env.VITE_SERVER;
+
+
 const Coin = () => {
 
   const [coins , setCoins] = useState([])

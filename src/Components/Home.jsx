@@ -1,5 +1,4 @@
 import { Box, Image, Text } from "@chakra-ui/react";
-import React from "react";
 import btcSrc from "../assets/coin.png";
 import { motion } from "framer-motion";
 
